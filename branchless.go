@@ -53,7 +53,7 @@ func Abs(x int) int {
 
 // Diff returns the absolute difference between x and y.
 func Diff(x, y int) int {
-	return Max(x, y) - Min(x, y)
+	return ((x - y) ^ ((x - y) >> 63)) - ((x - y) >> 63)
 }
 
 // Sign returns -1 if x < 0, 0 if x == 0, and 1 if x > 0.

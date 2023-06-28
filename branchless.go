@@ -11,8 +11,8 @@ func Max(x, y int) int {
 	return x ^ ((x ^ y) & ((x - y) >> 63))
 }
 
-// Min0 returns x if x > 0, otherwise 0.
-func Min0(x int) int {
+// MaxZeroAnd returns 0 if x is less than 0, otherwise x.
+func MaxZeroAnd(x int) int {
 	return x & ^(x >> 63)
 }
 

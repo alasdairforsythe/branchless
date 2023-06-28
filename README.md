@@ -10,8 +10,8 @@ Returns the minimum of x and y.
 ### Max(x, y int) int
 Returns the maximum of x and y.
 
-### Min0(x int) int
-Returns x if x > 0, otherwise 0.
+### MaxZeroAnd(x int) int
+Returns 0 if x is less than 0, otherwise x.
 
 ### LessThan(x, y int) int
 Returns 1 if x < y, otherwise 0.

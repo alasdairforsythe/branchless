@@ -76,7 +76,7 @@ func IsZero(x int) int {
 	return (((x | -x) >> 63) & 1) ^ 1
 }
 
-// IsZero returns 1 if x == 0, otherwise 0.
+// IsNotZero returns 1 if x != 0, otherwise 0.
 func IsNotZero(x int) int {
 	return (((x | -x) >> 63) & 1)
 }

@@ -6,14 +6,14 @@ func Min(x, y int) int {
 	return y ^ ((x ^ y) & ((x - y) >> 63))
 }
 
-// Min0 returns x if x > 0, otherwise 0.
-func Min0(x int64) int64 {
-	return x & ^(x >> 63)
-}
-
 // Max returns the maximum of x and y.
 func Max(x, y int) int {
 	return x ^ ((x ^ y) & ((x - y) >> 63))
+}
+
+// Min0 returns x if x > 0, otherwise 0.
+func Min0(x int) int {
+	return x & ^(x >> 63)
 }
 
 // LessThan returns 1 if x < y, otherwise 0.
@@ -57,8 +57,8 @@ func Diff(x, y int) int {
 }
 
 // Sign returns -1 if x < 0, 0 if x == 0, and 1 if x > 0.
-func Sign(x int64) int {
-	return int((x >> 63) | int64((uint64(-x) >> 63)))
+func Sign(x int) int {
+	return (x >> 63) | (-(x >> 63))
 }
 
 // IsPositive returns 1 if x > 0, otherwise 0.
@@ -81,9 +81,9 @@ func Clamp(x, min, max int) int {
 	return Min(Max(x, min), max)
 }
 
-// IsPowerOfTwo returns 1 if x is a power of 2, otherwise 0.
-func IsPowerOfTwo(x int64) int {
-	return int(^x & (x - 1) >> 63)
+// IsPowerOfTwo returns 1 if x is a power of 2 (or is zero), otherwise 0.
+func IsPowerOfTwo(x int) int {
+	return ^x & (x - 1) >> 63
 }
 
 // IsEven returns 1 if x is even, otherwise 0.

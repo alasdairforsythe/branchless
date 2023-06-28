@@ -49,6 +49,9 @@ Returns 1 if x < 0, otherwise 0.
 ### IsZero(x int) int
 Returns 1 if x == 0, otherwise 0.
 
+### IsNotZero(x int) int
+Returns 1 if x != 0, otherwise 0.
+
 ### Clamp(x, min, max int) int
 Clamps the value x between the minimum (min) and maximum (max) values.
 

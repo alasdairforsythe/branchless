@@ -1,6 +1,6 @@
 # Branchless
 
-Branchless is a Go package that provides branchless operations on integers.
+Branchless is a Go package that provides branchless operations on integers. It assumes `int` is 64-bit so will not work correctly on 32-bit architecture.
 
 ## Functions
 

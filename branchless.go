@@ -58,7 +58,7 @@ func Diff(x, y int) int {
 
 // Sign returns -1 if x < 0, 0 if x == 0, and 1 if x > 0.
 func Sign(x int) int {
-	return (x >> 63) | (-(x >> 63))
+	return (x >> 63) | int(uint(-x)>>63)
 }
 
 // IsPositive returns 1 if x > 0, otherwise 0.
